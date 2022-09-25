@@ -12,4 +12,9 @@ class StreamTasksUser implements StreamTasks {
     public List<String> filterDistinctString(List<String> notDistinctStrings) {
         return null;
     }
+
+    @Override
+    public List<Integer> reverseOrder(List<Integer> notDistinctStrings) {
+        return null;
+    }
 }
