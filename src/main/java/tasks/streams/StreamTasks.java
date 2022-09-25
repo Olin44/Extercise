@@ -8,4 +8,5 @@ interface StreamTasks {
 
     List<Integer> reverseOrder(List<Integer> integers);
 
+    String dnaToListOfTriplets(String dna);
 }

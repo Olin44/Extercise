@@ -17,4 +17,9 @@ class StreamTasksUser implements StreamTasks {
     public List<Integer> reverseOrder(List<Integer> integers) {
         return null;
     }
+
+    @Override
+    public String dnaToListOfTriplets(String dna) {
+        return null;
+    }
 }
