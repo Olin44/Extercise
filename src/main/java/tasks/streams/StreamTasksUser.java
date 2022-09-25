@@ -14,7 +14,7 @@ class StreamTasksUser implements StreamTasks {
     }
 
     @Override
-    public List<Integer> reverseOrder(List<Integer> notDistinctStrings) {
+    public List<Integer> reverseOrder(List<Integer> integers) {
         return null;
     }
 }

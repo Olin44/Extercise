@@ -23,7 +23,7 @@ class StreamTasksTest {
         //when
         List<String> providedDistinctString = streamTasks.filterDistinctString(notDistinctStrings);
         //then
-        assertEquals(providedDistinctString, distinctStrings);
+        assertEquals(distinctStrings, providedDistinctString);
     }
 
     private static Stream<Arguments> argumentsForShouldReturnDistinctStrings() {
@@ -34,6 +34,24 @@ class StreamTasksTest {
                 Arguments.of(List.of("first", "second", "first"), List.of("first", "second")),
                 Arguments.of(List.of("first", "second", "first", "second"), List.of("first", "second")),
                 Arguments.of(List.of("first", "second", "first", "second"), List.of("first", "second"))
+        );
+    }
+
+    @ParameterizedTest
+    @MethodSource("argumentsForShouldReturnIntegerInReverseOrder")
+    void shouldReturnIntegerInReverseOrder(List<Integer> integers, List<Integer> reverseOrderIntegers) {
+        //when
+        List<Integer> providedReverseOrderIntegers = streamTasks.reverseOrder(integers);
+        //then
+        assertEquals(reverseOrderIntegers, providedReverseOrderIntegers);
+    }
+
+    private static Stream<Arguments> argumentsForShouldReturnIntegerInReverseOrder() {
+        return Stream.of(
+                Arguments.of(List.of(), List.of()),
+                Arguments.of(List.of(1), List.of(1)),
+                Arguments.of(List.of(1, 2, 3), List.of(3, 2, 1)),
+                Arguments.of(List.of(2, 3, 1), List.of(3, 2, 1))
         );
     }
 }

@@ -6,6 +6,6 @@ interface StreamTasks {
 
     List<String> filterDistinctString(List<String> notDistinctStrings);
 
-    List<Integer> reverseOrder(List<Integer> notDistinctStrings);
+    List<Integer> reverseOrder(List<Integer> integers);
 
 }
