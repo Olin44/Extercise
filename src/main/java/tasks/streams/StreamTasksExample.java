@@ -17,8 +17,8 @@ class StreamTasksExample implements StreamTasks {
     }
 
     @Override
-    public List<Integer> reverseOrder(List<Integer> notDistinctStrings) {
-        return notDistinctStrings.stream()
+    public List<Integer> reverseOrder(List<Integer> integers) {
+        return integers.stream()
                 .sorted(Comparator.reverseOrder())
                 .toList();
     }
