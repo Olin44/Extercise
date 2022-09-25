@@ -19,7 +19,12 @@ class StreamTasksUser implements StreamTasks {
     }
 
     @Override
-    public String dnaToListOfTriplets(String dna) {
+    public List<String> dnaToListOfTriplets(String dna) {
+        return null;
+    }
+
+    @Override
+    public List<Integer> removeGreaterThanProvidedMaxNumber(List<Integer> integers, int maxNumber) {
         return null;
     }
 }

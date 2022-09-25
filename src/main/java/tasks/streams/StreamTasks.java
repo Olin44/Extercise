@@ -8,5 +8,8 @@ interface StreamTasks {
 
     List<Integer> reverseOrder(List<Integer> integers);
 
-    String dnaToListOfTriplets(String dna);
+    List<String> dnaToListOfTriplets(String dna);
+
+    List<Integer> removeGreaterThanProvidedMaxNumber(List<Integer> integers, int maxNumber);
+
 }

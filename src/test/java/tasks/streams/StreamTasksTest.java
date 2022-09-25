@@ -54,4 +54,37 @@ class StreamTasksTest {
                 Arguments.of(List.of(2, 3, 1), List.of(3, 2, 1))
         );
     }
+
+    @ParameterizedTest
+    @MethodSource("argumentsForShouldReturnTriplets")
+    void shouldReturnIntegerInReverseOrder(String dna, List<String> triplets) {
+        //when
+        List<String> providedTriplets = streamTasks.dnaToListOfTriplets(dna);
+        //then
+        assertEquals(triplets, providedTriplets);
+    }
+
+    private static Stream<Arguments> argumentsForShouldReturnTriplets() {
+        return Stream.of(
+                Arguments.of("tga", List.of("TGA")),
+                Arguments.of("tgaactatg", List.of("TGA", "ACT", "ATG"))
+        );
+    }
+
+    @ParameterizedTest
+    @MethodSource("argumentsForRemoveGreaterThanProvided")
+    void removeGreaterThanProvided(List<Integer> integers, List<Integer> integersWithoutGreaterThanProvided) {
+        //when
+        List<Integer> providedIntegers = streamTasks.removeGreaterThanProvidedMaxNumber(integers, 5);
+        //then
+        assertEquals(integersWithoutGreaterThanProvided, providedIntegers);
+    }
+
+    private static Stream<Arguments> argumentsForRemoveGreaterThanProvided() {
+        return Stream.of(
+                Arguments.of(List.of(), List.of()),
+                Arguments.of(List.of(1, 2, 3, 4, 5), List.of(1, 2, 3, 4, 5, 6, 7, 8)),
+                Arguments.of(List.of(1, 2, 3, 4), List.of(1, 2, 3, 4))
+        );
+    }
 }
