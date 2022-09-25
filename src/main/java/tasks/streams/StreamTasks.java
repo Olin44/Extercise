@@ -5,14 +5,12 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-@Component
-@Profile("user")
-abstract class StreamTasks {
-    abstract List<String> filterDistinctString(List<String> notDistinctStrings);
+public interface StreamTasks {
+    List<String> filterDistinctString(List<String> notDistinctStrings);
 
-    abstract List<Integer> reverseOrder(List<Integer> integers);
+    List<Integer> reverseOrder(List<Integer> integers);
 
-    abstract List<String> dnaToListOfTriplets(String dna);
+    List<String> dnaToListOfTriplets(String dna);
 
-    abstract List<Integer> removeGreaterThanProvidedMaxNumber(List<Integer> integers, int maxNumber);
+    List<Integer> removeGreaterThanProvidedMaxNumber(List<Integer> integers, int maxNumber);
 }
