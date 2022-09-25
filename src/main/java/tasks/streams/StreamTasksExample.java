@@ -9,29 +9,30 @@ import java.util.List;
 
 @Component
 @Profile("example")
-class StreamTasksExample implements StreamTasks {
+class StreamTasksExample extends StreamTasks {
     @Override
-    public List<String> filterDistinctString(List<String> notDistinctStrings) {
+    List<String> filterDistinctString(List<String> notDistinctStrings) {
         return notDistinctStrings.stream()
                 .distinct()
                 .toList();
     }
 
     @Override
-    public List<Integer> reverseOrder(List<Integer> integers) {
+    List<Integer> reverseOrder(List<Integer> integers) {
         return integers.stream()
                 .sorted(Comparator.reverseOrder())
                 .toList();
     }
 
     @Override
-    public List<String> dnaToListOfTriplets(String dna) {
+    List<String> dnaToListOfTriplets(String dna) {
         return Arrays.stream(dna.split("(?<=\\G.{3})"))
                 .map(String::toUpperCase)
                 .toList();
     }
 
-    public List<Integer> removeGreaterThanProvidedMaxNumber(List<Integer> integers, int maxNumber) {
+    @Override
+    List<Integer> removeGreaterThanProvidedMaxNumber(List<Integer> integers, int maxNumber) {
         return integers.stream()
                 .filter(integer -> integer < maxNumber)
                 .toList();
